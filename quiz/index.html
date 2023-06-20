@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Quiz page</title>
+</head>
+<body>
+    <div class="mainDiv">
+        <div class="centerDiv">
+            <div style="margin-bottom:20px !important; display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 30px; ">Quiz Applicaiton</span>
+            <span class="timer">timer</span>
+            </div>
+            <hr style="margin: 10px 0px;">
+
+            <h1 class="question">hello world</h1>
+            <div class="radioDiv">
+            <label>
+                <input onclick="enableBtn()" value="1" type="radio" name="answer">
+                <span class="option1"></span>
+            </label>
+            <label>
+                <input  onclick="enableBtn()" value="2"  type="radio" name="answer">
+                <span class="option2"></span>
+            </label>
+            <label>
+                <input  onclick="enableBtn()" value="3" type="radio" name="answer" id="option3">
+                <span class="option3"></span>
+            </label>
+            <label>
+                <input  onclick="enableBtn()" value="4" type="radio" name="answer" id="option4">
+                <span class="option4"></span>
+            </label>
+        </div>
+        <div class="endDiv">
+            <h3><span class="quesNum">1</span> of <span class="totalquesNum">10</span> questions</h3>
+            <button class="nextQuestionClass" disabled onclick="nextQuestion()">Next</button>
+        </div>
+
+
+        </div>
+
+    </div>
+    <script src="./app.js"></script>
+</body>
+</html>
