@@ -106,7 +106,7 @@ function loginHandler() {
 
     localStorage.setItem("isLoggedInUser", JSON.stringify(userCheck[0]));
 
-    window.location.href = "./quiz/index.html";
+    window.location.href = "./quiz/quizSelect.html";
   } else {
     alert("password is incorrect");
   }
