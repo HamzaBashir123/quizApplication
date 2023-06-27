@@ -1,3 +1,5 @@
+import {setValue} from "./quizSelectapp.js";
+console.log(setValue);
 var html = [
     {
         question: 'What does HTML stand for?',
@@ -428,8 +430,6 @@ var js = [
 ]
 
 
-
- 
 
 
 const question = document.querySelector('.question')

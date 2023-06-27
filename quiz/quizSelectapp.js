@@ -49,3 +49,4 @@ function enableBtn(){
 }
 
 
+export {setValue};
