@@ -1,5 +1,3 @@
-import {setValue} from "./quizSelectapp.js";
-console.log(setValue);
 var html = [
     {
         question: 'What does HTML stand for?',
@@ -443,6 +441,9 @@ const nextQuestionClass = document.querySelector('.nextQuestionClass')
 const answer = document.getElementsByName('answer')
 const quesNum = document.querySelector('.quesNum');
 const totalquesNum = document.querySelector('.totalquesNum');
+const startbutoon = document.querySelector('.startbutoon');
+const numbersShow = document.querySelector('.numbersShow');
+
 
 
 
@@ -452,7 +453,24 @@ var index = 0;
 let score = 0
 totalquesNum.innerHTML = html.length
 
+const interval = ()=>{
+    setInterval(function(){
+    timer.innerHTML = sec;
+    sec--;
+    if(sec<0){
+        sec = 30
+        nextQuestion()
+
+    }
+
+},100)}
+
+
+
+
 function nextQuestion(){
+    selectionOfTest++
+    
     for (let i = 0; i < answer.length; i++) {
         if(answer[i].checked){
             console.log(answer[i].value)
@@ -484,9 +502,9 @@ function nextQuestion(){
     nextQuestionClass.style.opacity = 0.7;
     nextQuestionClass.style.cursor = 'default';
 }
-sec = 30
+
 }
-nextQuestion()
+
 
 function enableBtn(){
     nextQuestionClass.disabled = false;
@@ -494,19 +512,13 @@ function enableBtn(){
     nextQuestionClass.style.cursor = 'pointer';
 
 }
+
 var sec =  30;
 const timer = document.querySelector('.timer');
 
 
 
+import {setValue} from '/module/quizSelectapp.js'
+console.log(setValue)
 
-const interval = setInterval(function(){
-    timer.innerHTML = sec;
-    sec--;
-    if(sec<0){
-        sec = 30
-        nextQuestion()
 
-    }
-
-},100)

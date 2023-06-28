@@ -7,11 +7,11 @@ const option3 = document.getElementsByName('option3')
 
 
 
-let setValue;
+// export let setValue;
 
 
 
-function nextQuestion(){
+export function nextQuestion1(){
     
     for (let i = 0; i < answer.length; i++) {
         if(answer[i].checked){
@@ -45,8 +45,7 @@ function enableBtn(){
     nextQuestionClass.disabled = false;
     nextQuestionClass.style.opacity = 1;
     nextQuestionClass.style.cursor = 'pointer';
+    
 
 }
 
-
-export {setValue};

@@ -39,7 +39,7 @@ box-sizing: border-box;
     border-radius: 7px;
 }
 .endDiv{
-    /* border: 2px solid grey; */
+    border: 2px solid grey;
     position: absolute;
     margin-top: auto ;
     bottom: 10px ;
@@ -49,7 +49,29 @@ box-sizing: border-box;
     align-items: center;
 
 }
+.buttons1{
+    position: relative;
+    border: 2px solid forestgreen;
+
+}
+.numbersShow{
+    /* visibility: hidden; */
+}
+.startbutoon{
+    
+    position: absolute;
+    border: 2px solid red;
+    inset: 0;
+    border-radius: 5px;
+    color: white;
+    background-color: grey ;
+    cursor: pointer;
+    opacity: 0.7;
+    
+
+}
 .nextQuestionClass{
+    /* display: none; */
     padding: 8px 20px;
     border-radius: 5px;
     color: white;
@@ -65,13 +87,4 @@ box-sizing: border-box;
 /* quiz  Application  */
 
 
-.startButoon{
-    padding: 10px 40px;
-    /* border: 2px solid green; */
-}
-.startButoonDiv{
-    /* border: 2px solid green; */
-    display: flex;
-    justify-content: center;
-    margin: 30px 0px;
-}
+
