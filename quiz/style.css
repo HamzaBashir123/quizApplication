@@ -45,7 +45,7 @@ box-sizing: border-box;
     bottom: 10px ;
     display: flex;
     width: 90%;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 
 }

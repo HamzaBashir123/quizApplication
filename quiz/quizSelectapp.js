@@ -3,16 +3,18 @@
 
 const nextQuestionClass = document.querySelector('.nextQuestionClass')
 const answer = document.getElementsByName('answer')
-const option3 = document.getElementsByName('option3')
+// const option3 = document.getElementsByName('option3')
+const startButoon = document.querySelector('.startButoon')
 
 
-
+console.log(answer)
 // export let setValue;
 
 
 
-export function nextQuestion1(){
+function nextQuestion1(){
     
+    console.log('mil gya')
     for (let i = 0; i < answer.length; i++) {
         if(answer[i].checked){
             console.log(answer[i].value)
@@ -21,7 +23,7 @@ export function nextQuestion1(){
             setValue = userAnswer.innerHTML
             
             window.location.href = "./index.html";
-
+            
             
             
           
@@ -29,7 +31,7 @@ export function nextQuestion1(){
         
         
     }
-   
+    
     
     
     
@@ -38,9 +40,10 @@ export function nextQuestion1(){
     nextQuestionClass.disabled = true;
     nextQuestionClass.style.opacity = 0.7;
     nextQuestionClass.style.cursor = 'default';
-
-
+    
+    
 }
+startButoon.addEventListener('Click', nextQuestion1)
 function enableBtn(){
     nextQuestionClass.disabled = false;
     nextQuestionClass.style.opacity = 1;
