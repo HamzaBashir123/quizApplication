@@ -1,17 +1,27 @@
 
+let setValue;
+
+
+export {setValue} ;
+
 
 
 const nextQuestionClass = document.querySelector('.nextQuestionClass')
 const answer = document.getElementsByName('answer')
 // const option3 = document.getElementsByName('option3')
 const startButoon = document.querySelector('.startButoon')
+const html = document.querySelector('.html')
+const css = document.querySelector('.css')
+const javaScript = document.querySelector('.javaScript')
+
+html.addEventListener('click', enableBtn)
+css.addEventListener('click', enableBtn)
+javaScript.addEventListener('click', enableBtn)
 
 
-console.log(answer)
-// export let setValue;
 
 
-
+startButoon.addEventListener('click',nextQuestion1)
 function nextQuestion1(){
     
     console.log('mil gya')
@@ -20,10 +30,10 @@ function nextQuestion1(){
             console.log(answer[i].value)
             const userAnswer = document.querySelector(`.option${answer[i].value}`)
             console.log(userAnswer.innerHTML)
+            
+
             setValue = userAnswer.innerHTML
-            
             window.location.href = "./index.html";
-            
             
             
           
@@ -32,18 +42,12 @@ function nextQuestion1(){
         
     }
     
-    
-    
-    
-    
-   
     nextQuestionClass.disabled = true;
     nextQuestionClass.style.opacity = 0.7;
     nextQuestionClass.style.cursor = 'default';
     
     
 }
-startButoon.addEventListener('Click', nextQuestion1)
 function enableBtn(){
     nextQuestionClass.disabled = false;
     nextQuestionClass.style.opacity = 1;

@@ -429,6 +429,8 @@ var js = [
 
 
 
+import {setValue} from './quizSelectapp.js'
+console.log(setValue)
 
 const question = document.querySelector('.question')
 const option1 = document.querySelector('.option1')
@@ -451,7 +453,7 @@ const numbersShow = document.querySelector('.numbersShow');
 
 var index = 0;
 let score = 0
-totalquesNum.innerHTML = html.length
+totalquesNum.innerHTML = html.length 
 
 const interval = ()=>{
     setInterval(function(){
@@ -504,6 +506,7 @@ function nextQuestion(){
 }
 
 }
+nextQuestion()
 
 
 function enableBtn(){
@@ -518,7 +521,5 @@ const timer = document.querySelector('.timer');
 
 
 
-import {setValue} from '/module/quizSelectapp.js'
-console.log(setValue)
 
 

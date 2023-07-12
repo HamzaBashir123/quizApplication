@@ -39,7 +39,7 @@ box-sizing: border-box;
     border-radius: 7px;
 }
 .endDiv{
-    border: 2px solid grey;
+    /* border: 2px solid grey; */
     position: absolute;
     margin-top: auto ;
     bottom: 10px ;
@@ -72,7 +72,7 @@ box-sizing: border-box;
 }
 .nextQuestionClass{
     /* display: none; */
-    padding: 8px 20px;
+    padding: 10px 35px;
     border-radius: 5px;
     color: white;
     background-color: grey;
