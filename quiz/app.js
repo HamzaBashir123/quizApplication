@@ -426,11 +426,13 @@ var js = [
         correctOption: 'var carName;'
     }
 ]
+ 
+
+const selectedValue = JSON.parse(localStorage.getItem("value"));
+
+let selectedValue1 = selectedValue.toLowerCase()
 
 
-
-import {setValue} from './quizSelectapp.js'
-console.log(setValue)
 
 const question = document.querySelector('.question')
 const option1 = document.querySelector('.option1')
@@ -445,18 +447,41 @@ const quesNum = document.querySelector('.quesNum');
 const totalquesNum = document.querySelector('.totalquesNum');
 const startbutoon = document.querySelector('.startbutoon');
 const numbersShow = document.querySelector('.numbersShow');
+const html1 = document.querySelector('.html')
+const css1 = document.querySelector('.css')
+const javaScript1 = document.querySelector('.javaScript')
+
+html1.addEventListener('click', enableBtn)
+css1.addEventListener('click', enableBtn)
+javaScript1.addEventListener('click', enableBtn)
+// startbutoon.addEventListener('click', startQuestion)
 
 
-
-
-
+let sendValuePass ;
+if (selectedValue1 === 'html' ){
+    sendValuePass = html;
+}
+else if(selectedValue1 === 'css' ){
+    sendValuePass = css;
+}
+else if(selectedValue1 === 'javascript' ){
+    sendValuePass = js;
+}
 
 var index = 0;
 let score = 0
-totalquesNum.innerHTML = html.length 
+totalquesNum.innerHTML = sendValuePass.length
 
-const interval = ()=>{
-    setInterval(function(){
+
+
+
+
+
+var sec =  30;
+const timer = document.querySelector('.timer');
+const myInterval = setInterval(myTimer, 1000);
+
+function myTimer(){
     timer.innerHTML = sec;
     sec--;
     if(sec<0){
@@ -464,45 +489,45 @@ const interval = ()=>{
         nextQuestion()
 
     }
-
-},100)}
-
-
-
+}
 
 function nextQuestion(){
-    selectionOfTest++
     
     for (let i = 0; i < answer.length; i++) {
         if(answer[i].checked){
-            console.log(answer[i].value)
-            const userAnswer = html[index-1][`option${answer[i].value}`]
-            if(userAnswer ===  html[index-1].correctOption){
+            // console.log(sendValuePass[index-1])
+            const userAnswer = sendValuePass[index-1][`option${answer[i].value}`]
+            if(userAnswer ===  sendValuePass[index-1].correctOption){
                 score++;
+                console.log(score)
               
             }
         }
         answer[i].checked = false
         
     }
-    if(index > html.length-1){
+    if(index > sendValuePass.length-1){
         console.log('end')
-        console.log(((score/html.length)*100)+'%')
-        clearInterval(interval);
+        let percentage = ((score/sendValuePass.length)*100)
+        clearInterval(myInterval);
+        localStorage.setItem("Score", JSON.stringify(percentage));
+        window.location.href = "./score/index.html"
+        
         
 
     }
     else{
-    question.innerHTML = html[index]['question']
-    option1.innerText = html[index].option1
-    option2.innerText = html[index].option2
-    option3.innerText = html[index].option3
-    
-    index++
-    quesNum.innerHTML = index;
-    nextQuestionClass.disabled = true;
-    nextQuestionClass.style.opacity = 0.7;
-    nextQuestionClass.style.cursor = 'default';
+        question.innerHTML = sendValuePass[index]['question']
+        option1.innerText = sendValuePass[index].option1
+        option2.innerText = sendValuePass[index].option2
+        option3.innerText = sendValuePass[index].option3
+        
+        index++
+        quesNum.innerHTML = index;
+        nextQuestionClass.disabled = true;
+        nextQuestionClass.style.opacity = 0.7;
+        nextQuestionClass.style.cursor = 'default';
+    sec =  30;
 }
 
 }
@@ -516,8 +541,8 @@ function enableBtn(){
 
 }
 
-var sec =  30;
-const timer = document.querySelector('.timer');
+
+
 
 
 

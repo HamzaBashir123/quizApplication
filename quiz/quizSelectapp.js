@@ -1,8 +1,6 @@
 
-let setValue;
 
 
-export {setValue} ;
 
 
 
@@ -32,8 +30,9 @@ function nextQuestion1(){
             console.log(userAnswer.innerHTML)
             
 
-            setValue = userAnswer.innerHTML
+            localStorage.setItem("value", JSON.stringify(userAnswer.innerHTML));
             window.location.href = "./index.html";
+            
             
             
           
@@ -55,4 +54,3 @@ function enableBtn(){
     
 
 }
-
