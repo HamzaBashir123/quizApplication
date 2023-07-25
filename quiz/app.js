@@ -479,7 +479,8 @@ totalquesNum.innerHTML = sendValuePass.length
 
 var sec =  30;
 const timer = document.querySelector('.timer');
-const myInterval = setInterval(myTimer, 1000);
+const myInterval = Math.round(setInterval(myTimer, 1000));
+
 
 function myTimer(){
     timer.innerHTML = sec;

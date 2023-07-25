@@ -37,7 +37,7 @@
 
 .rightChild {
   position: relative;
-  width: 30% !important;
+  width: 25% !important;
   height: 90% !important;
   background-color: white;
   margin-left: 20px;
@@ -263,4 +263,19 @@
 }
 .signUp:hover {
   background-color: rgba(0, 128, 0, 0.452);
+}
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 500px)  {
+  .rightChild {
+    width: 90% !important;
+    height: 90% !important;
+    
+  }
 }
